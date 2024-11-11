@@ -1,3 +1,14 @@
+/*
+
+    Napisi programa koja ke najde najmal broj na paricki(moneti) za dadena cena
+
+    primer money system: 50 20 10 2 1
+
+ */
+
+
+
+
 import java.util.Scanner;
 public class ParickiZadaca {
 
@@ -16,7 +27,7 @@ public class ParickiZadaca {
         int i = l, j = mid + 1, k=0;
         int[] pom = new int[r - l + 1];
         while (i <= mid && j <= r) {
-            if (niza[i] < niza[j]) {
+            if (niza[i] > niza[j]) {
                 pom[k++] = niza[i++];
             }
             else {
@@ -37,20 +48,21 @@ public class ParickiZadaca {
 
     public static int greedyBrojParicki(int cena, int[] pari ){
         //trebase msm za greedy da se prvo podredat od najgolem do najmal pa posle da se iskoriste toa
-        int min=Integer.MAX_VALUE;
+        int min=0;
         mergeSort(pari,0,pari.length-1);
         for (int i=0;i<pari.length;i++){
-            System.out.println(pari[i]);
-        }
+            System.out.print(pari[i] + " ");
+        } System.out.println();
+
         int i=0, broj=0, count;
-        while(cena!=0) {
+        while(cena!=0) { //17-10=7
             broj = cena / pari[i++];
             min += broj;
             cena -= broj*pari[i-1];
         }
 
 
-        return min == Integer.MAX_VALUE ? -1 : min;
+        return min;
     }
 
     // Define coin denominations
@@ -80,15 +92,21 @@ public class ParickiZadaca {
 
     public static void main(String[] args) {
 
-        int pari[] = new int[3];
+        int pari[] = new int[5];
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < pari.length; i++) {
-            System.out.println("Vnesi sledna para: ");
-            pari[i] = sc.nextInt();
+            System.out.println("Vnesi sledna para (or -1 za kraj): ");
+            int output=sc.nextInt();
+            if(output == -1) { //this doesnt work poradi merge sort treba dinamicno so Arraylist da se alocira ako sakam da implementiram toa
+                break;
+            }
+            pari[i] = output;
         }
 
         ParickiZadaca parickiZadaca = new ParickiZadaca();
-        System.out.println(parickiZadaca.minBrojParicki(17));
-        System.out.println(parickiZadaca.greedyBrojParicki(17,pari));
+        long startTime = System.currentTimeMillis();
+        System.out.println("Brute force algoritam output: " + parickiZadaca.minBrojParicki(1000) + " Vreme: " + (System.currentTimeMillis()-startTime));
+        startTime = System.currentTimeMillis();
+        System.out.println("Greedy alg output: " + parickiZadaca.greedyBrojParicki(1000,pari) + " Vreme: " + (System.currentTimeMillis()-startTime));
     }
 }
