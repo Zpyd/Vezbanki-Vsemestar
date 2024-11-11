@@ -37,7 +37,7 @@ public class minRast2Tocki {
         return d;
     }
     public static void main(String[] args) {
-        //dali e potrebno dimenziite? najverojatno? so so se dodavat?
+       
         Random rand =new Random();
         int n=5;
         Tocka[] t =new Tocka[n];
