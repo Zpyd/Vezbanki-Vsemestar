@@ -1,0 +1,3 @@
+/home/x/Desktop/V_semestar/Github/Vezbanki-Vsemestar/OS/Nitki/cmake-build-debug/CMakeFiles/Nitki.dir
+/home/x/Desktop/V_semestar/Github/Vezbanki-Vsemestar/OS/Nitki/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/x/Desktop/V_semestar/Github/Vezbanki-Vsemestar/OS/Nitki/cmake-build-debug/CMakeFiles/rebuild_cache.dir

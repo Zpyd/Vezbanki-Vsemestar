@@ -1,0 +1,4 @@
+/home/x/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/x/.local/share/JetBrains/Toolbox/apps/clion/bin/ninja/linux/x64/ninja -G Ninja -S /home/x/Desktop/V_semestar/Github/Vezbanki-Vsemestar/OS/Nitki -B /home/x/Desktop/V_semestar/Github/Vezbanki-Vsemestar/OS/Nitki/cmake-build-debug
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/x/Desktop/V_semestar/Github/Vezbanki-Vsemestar/OS/Nitki/cmake-build-debug
